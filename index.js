@@ -122,6 +122,11 @@ async function run(){
             }
             res.status(403).send({ accessToken: '' })
         });
+        app.get('/emaildata', async (req, res) => {
+            const query = {};
+            const users = await userscollection.find(query).toArray();
+            res.send(users);
+        });
 
         app.get('/users', async (req, res) => {
             
@@ -154,7 +159,7 @@ async function run(){
             const user = await userscollection.find(query).toArray();
             res.send(user);
         })
-        // delete sellerrrooo git commit -m "six"vvvvoooooppppppiiiioooooopppp
+        // delete sellerrrooo git commit -m "six"vvvvoooooppppppppiiiioooooopppp
         app.delete('/users/seller/:id',  async (req, res) => {
             const id = req.params.id;
             const filter = { _id: ObjectId(id) };
