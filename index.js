@@ -154,7 +154,7 @@ async function run(){
             const user = await userscollection.find(query).toArray();
             res.send(user);
         })
-        // delete sellerrrooo git commit -m "six"vvvvooooo
+        // delete sellerrrooo git commit -m "six"vvvvooooopppppp
         app.delete('/users/seller/:id',  async (req, res) => {
             const id = req.params.id;
             const filter = { _id: ObjectId(id) };
